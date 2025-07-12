@@ -1,3 +1,4 @@
+
 import React from 'react'
 
 function Header({ account, reputation, userType, setUserType, onConnect }) {
@@ -5,10 +6,16 @@ function Header({ account, reputation, userType, setUserType, onConnect }) {
     return addr ? `${addr.slice(0, 6)}...${addr.slice(-4)}` : ''
   }
 
+  const getReputationColor = (rep) => {
+    if (rep >= 80) return '#28a745'
+    if (rep >= 60) return '#ffc107'
+    return '#dc3545'
+  }
+
   return (
     <header className="header">
       <div className="header-content">
-        <h1>🏦 Microloan Bank</h1>
+        <h1>🏦 Dynamic Microloan Bank</h1>
         
         <div className="header-info">
           <div className="user-type-selector">
@@ -24,6 +31,12 @@ function Header({ account, reputation, userType, setUserType, onConnect }) {
             >
               Lender
             </button>
+            <button 
+              className={`user-type-btn ${userType === 'owner' ? 'active' : ''}`}
+              onClick={() => setUserType('owner')}
+            >
+              Owner
+            </button>
           </div>
 
           {account ? (
@@ -32,7 +45,12 @@ function Header({ account, reputation, userType, setUserType, onConnect }) {
               {userType === 'borrower' && (
                 <div className="reputation-badge">
                   <span>Reputation:</span>
-                  <span className="reputation-value">{reputation}</span>
+                  <span 
+                    className="reputation-value" 
+                    style={{ color: getReputationColor(reputation) }}
+                  >
+                    {reputation}
+                  </span>
                 </div>
               )}
             </div>

@@ -1,8 +1,8 @@
 import { ethers } from 'ethers'
-import contractABI from '../contracts/MicroloanBank.json'
+import contractABI from '../contracts/DynamicMicroloanBank.json'
 
 // You'll need to update this with your deployed contract address
-const CONTRACT_ADDRESS = '0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9'
+const CONTRACT_ADDRESS = '0x0165878A594ca255338adfa4d48449f69242Eb8F'
 
 export const connectWallet = async () => {
   if (typeof window.ethereum === 'undefined') {
