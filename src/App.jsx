@@ -5,6 +5,7 @@ import LoanRequest from './components/LoanRequest'
 import LoanList from './components/LoanList'
 import LoanActions from './components/LoanActions'
 import BorrowerStats from './components/BorrowerStats'
+import Chatbot from './components/Chatbot'
 import { connectWallet, getContract } from './utils/contractInteraction'
 import './App.css'
 
@@ -222,6 +223,7 @@ function App() {
 
   return (
     <div className="app">
+      <Chatbot />
       <Header 
         account={account} 
         reputation={reputation}

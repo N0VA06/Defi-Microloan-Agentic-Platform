@@ -22,16 +22,16 @@ function BorrowerStats({ stats }) {
         </div>
         <div className="stat-item">
           <span className="stat-label">Total Borrowed</span>
-          <span className="stat-value">{stats.totalBorrowed} ETH</span>
+          <span className="stat-value">{parseFloat(stats.totalBorrowed).toFixed(4)} ETH</span>
         </div>
         <div className="stat-item">
           <span className="stat-label">Total Repaid</span>
-          <span className="stat-value">{stats.totalRepaid} ETH</span>
+          <span className="stat-value">{parseFloat(stats.totalRepaid).toFixed(4)} ETH</span>
         </div>
         <div className="stat-item">
           <span className="stat-label">Outstanding</span>
           <span className="stat-value" style={{ color: parseFloat(stats.outstandingAmount) > 0 ? '#dc3545' : '#28a745' }}>
-            {stats.outstandingAmount} ETH
+            {parseFloat(stats.outstandingAmount).toFixed(4)} ETH
           </span>
         </div>
       </div>

@@ -24,7 +24,7 @@ function LoanRequest({ onRequestLoan, loading, reputation, outstandingAmount }) 
     const isLargeLoan = loanAmount >= 1
     
     // Estimate interest rate based on reputation
-    let interestRate = 20 - ((reputation - 50) * 15) / 50
+    let interestRate = 15- ((reputation - 50) * 15) / 50
     interestRate = Math.max(5, Math.min(20, interestRate))
     
     // Estimate duration
